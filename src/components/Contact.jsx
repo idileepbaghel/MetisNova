@@ -55,7 +55,7 @@ export default function Contact() {
     <section 
       id="contact" 
       ref={sectionRef}
-      className="py-20 px-6 scroll-mt-20 mx-8 rounded-3xl bg-gradient-to-b from-slate-200 to-white relative overflow-hidden"
+      className="py-12 sm:py-16 lg:py-20 px-3 sm:px-6 scroll-mt-20 mx-2 sm:mx-4 md:mx-6 lg:mx-8 rounded-2xl sm:rounded-3xl bg-gradient-to-b from-slate-200 to-white relative overflow-hidden"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden opacity-5">
@@ -64,72 +64,72 @@ export default function Contact() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className={`mb-16 text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+        <div className={`mb-12 sm:mb-16 text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
+          <h2 className="text-3xl xs:text-4xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
             Get In Touch
           </h2>
-          <p className="text-lg max-w-2xl mx-auto text-gray-600">
+          <p className="text-sm xs:text-base sm:text-lg max-w-2xl mx-auto text-gray-600 px-2">
             Ready to discuss your next project? We'd love to hear about your ideas.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
           <div className={`transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-            <h3 className="text-2xl font-bold mb-8 text-gray-900">
+            <h3 className="text-xl xs:text-2xl sm:text-2xl font-bold mb-6 sm:mb-8 text-gray-900">
               Contact Information
             </h3>
             
-            <div className="space-y-6 mb-12">
-              <div className="flex gap-4 p-6 rounded-3xl bg-white border-2 border-gray-200 hover:border-blue-400 hover:shadow-xl transition-all duration-300">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-white" />
+            <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
+              <div className="flex gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border-2 border-gray-200 hover:border-blue-400 hover:shadow-xl transition-all duration-300">
+                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+                  <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
                 <div>
-                  <p className="font-bold text-gray-900 mb-1">Email</p>
-                  <p className="text-blue-600 font-medium mb-1">contact@metisnova.com</p>
-                  <p className="text-sm text-gray-500">
+                  <p className="font-bold text-gray-900 mb-1 text-sm sm:text-base">Email</p>
+                  <p className="text-blue-600 font-medium mb-1 text-xs sm:text-sm">contact@metisnova.com</p>
+                  <p className="text-xs text-gray-500">
                     General inquiries and project discussions
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-4 p-6 rounded-3xl bg-white border-2 border-gray-200 hover:border-purple-400 hover:shadow-xl transition-all duration-300">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-white" />
+              <div className="flex gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border-2 border-gray-200 hover:border-purple-400 hover:shadow-xl transition-all duration-300">
+                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                  <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
                 <div>
-                  <p className="font-bold text-gray-900 mb-1">Careers</p>
-                  <p className="text-purple-600 font-medium mb-1">careers@metisnova.com</p>
-                  <p className="text-sm text-gray-500">
+                  <p className="font-bold text-gray-900 mb-1 text-sm sm:text-base">Careers</p>
+                  <p className="text-purple-600 font-medium mb-1 text-xs sm:text-sm">careers@metisnova.com</p>
+                  <p className="text-xs text-gray-500">
                     Join our team and grow with us
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-4 p-6 rounded-3xl bg-white border-2 border-gray-200 hover:border-green-400 hover:shadow-xl transition-all duration-300">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
-                  <MapPin className="w-6 h-6 text-white" />
+              <div className="flex gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border-2 border-gray-200 hover:border-green-400 hover:shadow-xl transition-all duration-300">
+                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
+                  <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
                 <div>
-                  <p className="font-bold text-gray-900 mb-1">Global</p>
-                  <p className="text-green-600 font-medium mb-1">We operate globally with distributed teams</p>
-                  <p className="text-sm text-gray-500">
+                  <p className="font-bold text-gray-900 mb-1 text-sm sm:text-base">Global</p>
+                  <p className="text-green-600 font-medium mb-1 text-xs sm:text-sm">We operate globally with distributed teams</p>
+                  <p className="text-xs text-gray-500">
                     Serving clients across all time zones
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="p-6 rounded-3xl bg-white border-2 border-gray-200 hover:border-cyan-400 hover:shadow-xl transition-all duration-300">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
-                  <Globe className="w-6 h-6 text-white" />
+            <div className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border-2 border-gray-200 hover:border-cyan-400 hover:shadow-xl transition-all duration-300">
+              <div className="flex gap-3 sm:gap-4">
+                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
+                  <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
                 <div>
-                  <p className="font-bold text-gray-900 mb-1">Website</p>
-                  <p className="text-cyan-600 font-medium mb-1">https://www.metisnova.com</p>
-                  <p className="text-sm text-gray-500">
+                  <p className="font-bold text-gray-900 mb-1 text-sm sm:text-base">Website</p>
+                  <p className="text-cyan-600 font-medium mb-1 text-xs sm:text-sm break-all">https://www.metisnova.com</p>
+                  <p className="text-xs text-gray-500">
                     Visit our website to learn more about our services and team
                   </p>
                 </div>
@@ -139,11 +139,11 @@ export default function Contact() {
 
           {/* Contact Form */}
           <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-            <div className="p-8 rounded-3xl bg-white border-2 border-gray-200 shadow-xl">
-              <div className="space-y-6">
-                <div className="grid grid-cols-2 gap-4">
+            <div className="p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl bg-white border-2 border-gray-200 shadow-xl">
+              <div className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div>
-                    <label className="block text-sm font-medium mb-2 text-gray-900">
+                    <label className="block text-xs sm:text-sm font-medium mb-2 text-gray-900">
                       Name
                     </label>
                     <input
@@ -153,11 +153,11 @@ export default function Contact() {
                       onChange={handleChange}
                       placeholder="Your name"
                       required
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl bg-gray-50 border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-sm sm:text-base"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2 text-gray-900">
+                    <label className="block text-xs sm:text-sm font-medium mb-2 text-gray-900">
                       Email
                     </label>
                     <input
@@ -167,14 +167,14 @@ export default function Contact() {
                       onChange={handleChange}
                       placeholder="your@email.com"
                       required
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl bg-gray-50 border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-sm sm:text-base"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div>
-                    <label className="block text-sm font-medium mb-2 text-gray-900">
+                    <label className="block text-xs sm:text-sm font-medium mb-2 text-gray-900">
                       Phone (Optional)
                     </label>
                     <input
@@ -183,11 +183,11 @@ export default function Contact() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+1 (555) 000-0000"
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl bg-gray-50 border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-sm sm:text-base"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2 text-gray-900">
+                    <label className="block text-xs sm:text-sm font-medium mb-2 text-gray-900">
                       Company
                     </label>
                     <input
@@ -196,13 +196,13 @@ export default function Contact() {
                       value={formData.company}
                       onChange={handleChange}
                       placeholder="Your company"
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl bg-gray-50 border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-sm sm:text-base"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-gray-900">
+                  <label className="block text-xs sm:text-sm font-medium mb-2 text-gray-900">
                     Subject
                   </label>
                   <input
@@ -212,12 +212,12 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="Software development, AI solutions, etc."
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl bg-gray-50 border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-sm sm:text-base"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-gray-900">
+                  <label className="block text-xs sm:text-sm font-medium mb-2 text-gray-900">
                     Message
                   </label>
                   <textarea
@@ -225,28 +225,28 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell us about your project..."
-                    rows="5"
+                    rows="4"
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl bg-gray-50 border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none text-sm sm:text-base"
                   ></textarea>
                 </div>
 
                 {isSubmitted && (
-                  <div className="p-4 rounded-xl border-2 border-green-300 bg-green-50 text-green-700">
-                    <p className="font-bold">Thank you! We'll be in touch soon.</p>
+                  <div className="p-3 sm:p-4 rounded-lg sm:rounded-xl border-2 border-green-300 bg-green-50 text-green-700">
+                    <p className="font-bold text-sm sm:text-base">Thank you! We'll be in touch soon.</p>
                   </div>
                 )}
 
                 <button
                   type="button"
                   onClick={handleSubmit}
-                  className="w-full py-4 text-white font-bold rounded-xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                  className="w-full py-3 sm:py-4 text-white font-bold text-sm sm:text-base rounded-lg sm:rounded-xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
                 >
-                  <Send className="w-5 h-5" />
+                  <Send className="w-4 h-4 sm:w-5 sm:h-5" />
                   Send Message
                 </button>
 
-                <p className="text-xs text-center text-gray-500">
+                <p className="text-xs text-center text-gray-500 px-2">
                   We respect your privacy. Your information will only be used to respond to your inquiry.
                 </p>
               </div>

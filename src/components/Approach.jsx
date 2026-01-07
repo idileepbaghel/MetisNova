@@ -73,14 +73,14 @@ export default function Approach() {
     <section 
       id="approach" 
       ref={sectionRef}
-      className="py-20 px-6 scroll-mt-20 bg-gradient-to-b from-white to-slate-50"
+      className="py-12 sm:py-16 lg:py-20 px-3 xs:px-4 sm:px-6 scroll-mt-20 bg-gradient-to-b from-white to-slate-50"
     >
       <div className="max-w-7xl mx-auto">
-        <div className={`mb-16 text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
+        <div className={`mb-12 sm:mb-16 text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
+          <h2 className="text-3xl xs:text-4xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-gray-900">
             Our Approach
           </h2>
-          <p className="text-lg max-w-2xl mx-auto text-gray-600">
+          <p className="text-sm xs:text-base sm:text-lg max-w-2xl mx-auto text-gray-600 px-2">
             A clear, proven methodology that delivers results at every stage
           </p>
         </div>
@@ -131,35 +131,35 @@ export default function Approach() {
         </div>
 
         {/* Mobile Timeline */}
-        <div className="md:hidden space-y-8">
+        <div className="md:hidden space-y-6 sm:space-y-8">
           {steps.map((step, idx) => (
-            <div key={idx} className="flex gap-6">
+            <div key={idx} className="flex gap-4 sm:gap-6">
               <div className="flex flex-col items-center">
                 <div 
-                  className={`w-20 h-20 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl flex-shrink-0 bg-gradient-to-r from-blue-600 to-cyan-600 transition-all duration-700 ${
+                  className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center text-white text-xl sm:text-2xl shadow-2xl flex-shrink-0 bg-gradient-to-r from-blue-600 to-cyan-600 transition-all duration-700 ${
                     activeCards.includes(idx) ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-0 rotate-180'
                   }`}
                   style={{ transitionDelay: `${idx * 200}ms` }}
                 >
-                  <step.Icon className="w-10 h-10" />
+                  <step.Icon className="w-8 h-8 sm:w-10 sm:h-10" />
                 </div>
                 {idx < steps.length - 1 && (
-                  <div className={`w-0.5 h-24 mt-2 bg-gradient-to-b from-blue-500 to-cyan-500 transition-all duration-500 ${
+                  <div className={`w-0.5 h-20 sm:h-24 mt-2 bg-gradient-to-b from-blue-500 to-cyan-500 transition-all duration-500 ${
                     activeCards.includes(idx) ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'
                   }`} style={{ transformOrigin: 'top', transitionDelay: `${idx * 200 + 300}ms` }}></div>
                 )}
               </div>
               <div 
-                className={`p-6 rounded-2xl border-2 border-gray-200 bg-white flex-1 mt-1 hover:shadow-2xl transition-all duration-500 ${
+                className={`p-4 sm:p-6 rounded-xl sm:rounded-2xl border-2 border-gray-200 bg-white flex-1 mt-1 hover:shadow-2xl transition-all duration-500 ${
                   activeCards.includes(idx) ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
                 }`}
                 style={{ transitionDelay: `${idx * 200 + 100}ms` }}
               >
-                <h3 className="font-bold mb-3 text-base text-gray-900">
+                <h3 className="font-bold mb-2 sm:mb-3 text-sm xs:text-base sm:text-base text-gray-900">
                   {step.title}
                 </h3>
-                <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mb-3"></div>
-                <p className="text-sm leading-relaxed text-gray-600">
+                <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mb-2 sm:mb-3"></div>
+                <p className="text-xs xs:text-sm sm:text-sm leading-relaxed text-gray-600">
                   {step.description}
                 </p>
               </div>

@@ -31,37 +31,36 @@ export default function Industries() {
 
   return (
     <section 
-      className="py-20 px-6 scroll-mt-20 bg-white"
+      className="py-12 sm:py-16 lg:py-20 px-3 xs:px-4 sm:px-6 scroll-mt-20 bg-white"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="mb-16 text-center">
-          <div className="inline-block mb-4 px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold">
+        <div className="mb-12 sm:mb-16 text-center">
+          <div className="inline-block mb-3 sm:mb-4 px-3 xs:px-4 sm:px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-xs xs:text-sm sm:text-sm font-semibold">
             🏭 Industries
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
+          <h2 className="text-3xl xs:text-4xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-gray-900">
             Industries We Serve
           </h2>
-          <p className="text-lg max-w-2xl mx-auto text-gray-600">
-
+          <p className="text-sm xs:text-base sm:text-lg max-w-2xl mx-auto text-gray-600 px-2">
             Delivering specialized solutions across diverse sectors with industry-specific expertise
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
           {industries.map((industry, idx) => {
             const IconComponent = industry.icon
             return (
               <div
                 key={idx}
-                className="p-6 rounded-lg border border-gray-200 bg-white hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group cursor-pointer"
+                className="p-4 sm:p-6 rounded-lg border border-gray-200 bg-white hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group cursor-pointer"
               >
-                <div className="text-3xl mb-4 text-blue-600 group-hover:scale-110 transition duration-300">
-                  <IconComponent className="w-8 h-8" />
+                <div className="text-2xl xs:text-3xl sm:text-3xl mb-3 sm:mb-4 text-blue-600 group-hover:scale-110 transition duration-300">
+                  <IconComponent className="w-6 h-6 sm:w-8 sm:h-8" />
                 </div>
-                <h3 className="text-lg font-bold mb-3 text-gray-900">
+                <h3 className="text-base xs:text-lg sm:text-lg font-bold mb-2 sm:mb-3 text-gray-900">
                   {industry.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-gray-600">
+                <p className="text-xs xs:text-sm sm:text-sm leading-relaxed text-gray-600">
                   {industry.description}
                 </p>
               </div>

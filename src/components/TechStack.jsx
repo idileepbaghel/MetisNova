@@ -70,7 +70,7 @@ export default function TechStack() {
     const displayedTech = activeTab === "frontend" ? frontendTech : backendTech;
 
     return (
-        <section id="tech" ref={sectionRef} className="py-10 px-8 bg-white">
+        <section id="tech" ref={sectionRef} className="py-12 sm:py-16 lg:py-20 px-3 sm:px-6 lg:px-8 bg-white w-full">
 
             {/* Custom CSS */}
             <style>{`
@@ -84,11 +84,42 @@ export default function TechStack() {
           transform: translateY(10px);
           transition: all 0.4s ease-in-out;
         }
+
+        /* Responsive card sizing */
+        @media (max-width: 480px) {
+          .tech-card {
+            width: 120px;
+            height: 160px;
+          }
+          .tech-icon {
+            font-size: 40px;
+          }
+        }
+
+        @media (min-width: 481px) and (max-width: 768px) {
+          .tech-card {
+            width: 130px;
+            height: 180px;
+          }
+          .tech-icon {
+            font-size: 45px;
+          }
+        }
+
+        @media (min-width: 769px) {
+          .tech-card {
+            width: 140px;
+            height: 200px;
+          }
+          .tech-icon {
+            font-size: 50px;
+          }
+        }
       `}</style>
 
             {/* Heading */}
             <h2 className="
-      text-4xl font-extrabold text-center mb-7 
+      text-2xl xs:text-3xl sm:text-3xl lg:text-4xl font-extrabold text-center mb-4 sm:mb-7 
       bg-gradient-to-r from-gray-700 to-gray-700 
       bg-clip-text text-transparent tracking-wide
     ">
@@ -96,9 +127,9 @@ export default function TechStack() {
             </h2>
 
             {/* Tabs */}
-            <div className="flex justify-center gap-6 mb-12">
+            <div className="flex justify-center gap-3 sm:gap-6 mb-8 sm:mb-12 flex-wrap">
                 <button
-                    className={`px-6 py-2 rounded-full text-lg font-semibold transition
+                    className={`px-4 xs:px-5 sm:px-6 py-2 rounded-full text-sm xs:text-base sm:text-lg font-semibold transition whitespace-nowrap
           ${activeTab === "frontend"
                             ? "bg-gray-800 text-white shadow-md"
                             : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -109,7 +140,7 @@ export default function TechStack() {
                 </button>
 
                 <button
-                    className={`px-6 py-2 rounded-full text-lg font-semibold transition
+                    className={`px-4 xs:px-5 sm:px-6 py-2 rounded-full text-sm xs:text-base sm:text-lg font-semibold transition whitespace-nowrap
           ${activeTab === "backend"
                             ? "bg-gray-800 text-white shadow-md"
                             : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -123,8 +154,8 @@ export default function TechStack() {
             {/* Tech Grid */}
             <div
                 className={`
-      flex flex-wrap justify-center gap-10 
-      max-w-5xl mx-auto
+      flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 lg:gap-10
+      max-w-7xl mx-auto px-2 sm:px-0
       ${fade ? "fade-in" : "fade-out"}
     `}
             >
@@ -132,20 +163,21 @@ export default function TechStack() {
                     <div
                         key={index}
                         className="
-        w-36 h-52
+        tech-card
         bg-gray-100
-        rounded-[60px]
+        rounded-3xl lg:rounded-[60px]
         flex flex-col items-center justify-center
         shadow-sm
         hover:shadow-xl
         transition
+        p-2 sm:p-3 lg:p-4
       "
                     >
-                        <div className="text-gray-700 mb-4">{item.icon}</div>
-                        <p className="text-2xl font-medium text-gray-800 mb-2">
+                        <div className="tech-icon text-gray-700 mb-2 sm:mb-3 lg:mb-4">{item.icon}</div>
+                        <p className="text-lg xs:text-xl sm:text-2xl font-medium text-gray-800 mb-1 sm:mb-2">
                             {item.percent}%
                         </p>
-                        <p className="text-sm text-gray-600 text-center mt-4">{item.label}</p>
+                        <p className="text-xs xs:text-xs sm:text-sm text-gray-600 text-center mt-1 sm:mt-3 lg:mt-4 px-1">{item.label}</p>
                     </div>
                 ))}
             </div>

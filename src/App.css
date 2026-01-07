@@ -3,6 +3,8 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -39,4 +41,99 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* RESPONSIVE PADDING & MARGINS FOR ALL DEVICES */
+
+/* Mobile First - Extra Small (320px - 480px) */
+@media (max-width: 480px) {
+  #root {
+    padding: 1rem;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .logo {
+    height: 4em;
+    padding: 1em;
+  }
+
+  .card {
+    padding: 1.25em;
+  }
+}
+
+/* Small Devices - Phones (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  #root {
+    padding: 1.25rem;
+  }
+
+  .logo {
+    height: 5em;
+    padding: 1.25em;
+  }
+
+  .card {
+    padding: 1.5em;
+  }
+}
+
+/* Tablets (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  #root {
+    padding: 1.5rem;
+  }
+
+  .logo {
+    height: 5.5em;
+    padding: 1.5em;
+  }
+
+  .card {
+    padding: 1.75em;
+  }
+}
+
+/* Large Screens (1025px+) */
+@media (min-width: 1025px) {
+  #root {
+    padding: 2rem;
+  }
+
+  .logo {
+    height: 6em;
+    padding: 1.5em;
+  }
+
+  .card {
+    padding: 2em;
+  }
+}
+
+/* Extra Large Displays (1920px+) */
+@media (min-width: 1920px) {
+  #root {
+    max-width: 1400px;
+    padding: 2.5rem;
+  }
+}
+
+/* 4K and Beyond (2560px+) */
+@media (min-width: 2560px) {
+  #root {
+    max-width: 1600px;
+    padding: 3rem;
+  }
+
+  .card {
+    padding: 3em;
+  }
 }

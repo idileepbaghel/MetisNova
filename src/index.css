@@ -378,3 +378,251 @@ select:focus {
   }
 }
 
+/* COMPREHENSIVE RESPONSIVE DESIGN FOR ALL DEVICES */
+
+/* Extra Small Devices (320px - 480px) */
+@media (max-width: 480px) {
+  :root {
+    font-size: 14px;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  h4 {
+    font-size: 0.95rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+
+  .input-box {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Small Devices - Phones (481px - 768px) */
+@media (max-width: 768px) {
+  :root {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  button {
+    font-size: 0.95rem;
+    padding: 12px 20px;
+  }
+}
+
+/* Tablets & Medium Devices (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.875rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Large Devices & Desktops (1025px+) */
+@media (min-width: 1025px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.875rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Mobile-first: Ensure all interactive elements are touch-friendly */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
+/* High DPI / Retina Display Adjustments */
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Optimize images and borders for high resolution */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Landscape Mode Adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  padding {
+    padding: 0.5rem;
+  }
+}
+
+/* Very Small Screens - Extreme Mobile (< 320px) - Fallback */
+@media (max-width: 320px) {
+  body {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  h3 {
+    font-size: 0.95rem;
+  }
+}
+
+/* Large Desktop (1920px+) */
+@media (min-width: 1920px) {
+  :root {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+}
+
+/* 4K Displays (2560px+) */
+@media (min-width: 2560px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2.75rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+}
+
+/* Container Queries Fallback with Media Queries */
+@media (min-width: 640px) {
+  .sm\:block {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:block {
+    display: block;
+  }
+
+  .md\:flex {
+    display: flex;
+  }
+
+  .md\:grid {
+    display: grid;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:block {
+    display: block;
+  }
+
+  .lg\:flex {
+    display: flex;
+  }
+
+  .lg\:grid {
+    display: grid;
+  }
+}
+
