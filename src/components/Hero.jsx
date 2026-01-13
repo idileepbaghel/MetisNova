@@ -22,10 +22,10 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 sm:mt-10 lg:mt-12 flex flex-col xs:flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-            <button className="w-full xs:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold bg-blue-600 text-white hover:bg-blue-700 hover:shadow-lg hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2 group text-sm sm:text-base">
+            <a href="#contact" className="w-full xs:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold bg-blue-600 text-white hover:bg-blue-700 hover:text-white hover:shadow-lg hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2 group text-sm sm:text-base">
               Talk to Us
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
 
             <a
               href="#services"

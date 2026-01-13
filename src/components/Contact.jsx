@@ -1,5 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
-import { Mail, MapPin, Send, Globe } from 'lucide-react';
+import { Mail, MapPin, Send, Globe, Loader } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+
+// Initialize EmailJS
+emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,6 +15,8 @@ export default function Contact() {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -43,12 +49,41 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    setFormData({ name: '', email: '', phone: '', company: '', subject: '', message: '' });
-    setTimeout(() => setIsSubmitted(false), 3000);
+    setIsLoading(true);
+    setError('');
+
+    try {
+      // Prepare email template parameters to match EmailJS template
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || 'Not provided',
+        company: formData.company || 'Not provided',
+        subject: formData.subject,
+        message: formData.message,
+      };
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams
+      );
+
+      if (response.status === 200) {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', phone: '', company: '', subject: '', message: '' });
+        setTimeout(() => setIsSubmitted(false), 5000);
+      }
+    } catch (err) {
+      console.error('EmailJS Error:', err);
+      setError('Failed to send message. Please try again later.');
+      setTimeout(() => setError(''), 5000);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -237,13 +272,29 @@ export default function Contact() {
                   </div>
                 )}
 
+                {error && (
+                  <div className="p-3 sm:p-4 rounded-lg sm:rounded-xl border-2 border-red-300 bg-red-50 text-red-700">
+                    <p className="font-bold text-sm sm:text-base">{error}</p>
+                  </div>
+                )}
+
                 <button
                   type="button"
                   onClick={handleSubmit}
-                  className="w-full py-3 sm:py-4 text-white font-bold text-sm sm:text-base rounded-lg sm:rounded-xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                  disabled={isLoading}
+                  className="w-full py-3 sm:py-4 text-white font-bold text-sm sm:text-base rounded-lg sm:rounded-xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  <Send className="w-4 h-4 sm:w-5 sm:h-5" />
-                  Send Message
+                  {isLoading ? (
+                    <>
+                      <Loader className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4 sm:w-5 sm:h-5" />
+                      Send Message
+                    </>
+                  )}
                 </button>
 
                 <p className="text-xs text-center text-gray-500 px-2">
