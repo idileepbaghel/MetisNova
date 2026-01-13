@@ -2,9 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { Mail, MapPin, Send, Globe, Loader } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
-// Initialize EmailJS
-emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
-
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -19,6 +16,15 @@ export default function Contact() {
   const [error, setError] = useState('');
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+
+  useEffect(() => {
+    // Initialize EmailJS
+    if (import.meta.env.VITE_EMAILJS_PUBLIC_KEY) {
+      emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    } else {
+      console.error('EmailJS Public Key is not set');
+    }
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -51,6 +57,16 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Validate environment variables
+    if (!import.meta.env.VITE_EMAILJS_SERVICE_ID || 
+        !import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 
+        !import.meta.env.VITE_EMAILJS_PUBLIC_KEY) {
+      setError('Email configuration is missing. Please check environment variables.');
+      setTimeout(() => setError(''), 5000);
+      return;
+    }
+
     setIsLoading(true);
     setError('');
 
@@ -79,7 +95,14 @@ export default function Contact() {
       }
     } catch (err) {
       console.error('EmailJS Error:', err);
-      setError('Failed to send message. Please try again later.');
+      // Provide more specific error messages
+      if (err.status === 0) {
+        setError('Network error. Please check your connection.');
+      } else if (err.status === 400) {
+        setError('Invalid email configuration. Please contact support.');
+      } else {
+        setError('Failed to send message. Please try again later.');
+      }
       setTimeout(() => setError(''), 5000);
     } finally {
       setIsLoading(false);
