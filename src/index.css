@@ -4,14 +4,24 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+ :root {
   font-family: 'Oswald', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.6;
   font-weight: 400;
 
+  /* Light theme (default) */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #e5e7eb;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #6b7280;
+  --accent: #2563eb;
+  --border: #e5e7eb;
+
   color-scheme: light;
-  color: #1f2937;
-  background-color: #ffffff;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,6 +34,17 @@
   from {
     opacity: 0;
     transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -118,6 +139,10 @@
 
 .animate-fade-in {
   animation: fade-in 0.6s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out;
 }
 
 .animate-slide-in-left {
